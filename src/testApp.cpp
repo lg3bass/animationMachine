@@ -98,9 +98,12 @@ void testApp::reset()
     
     cam.reset();
     
+    
+    
+    //*****NOT NEEDED, switched to ofNode()
     //this sets the distance from the origin.
     //in Maya this translates to +30 Z-units 
-    cam.setDistance(1500);
+    //cam.setDistance(1500);
     
     
     
@@ -361,11 +364,16 @@ void testApp::setupABCLoaders(int num) {
         //get the contents of the Text Input field in gui_loader. This contains the file path.
         ofxUITextInput *loader_label = (ofxUITextInput *)gui_loader->getWidget(ofToString(i)+"_TRK_READER");
         
-        //create the container for the abc.
-        abcModels.push_back(abcModel(loader_label->getTextString(),0,*myABCs[i],i)); //QUESTION: Why is the asterick needed on myABCs?
+        //add blank abcModels 
+        abcModels.push_back(abcModel(i)); //QUESTION: Why is the asterick needed on myABCs?
         
         
-        //setup the abcContainer (init)
+        //setup the abcModel(s)
+        //syntax: init(file,divisions,reader,id)
+        abcModels[i].init(loader_label->getTextString(),0,*myABCs[i]);
+        
+        //componsate for the Maya cm->m
+        abcModels[i].setScale(25.0);
         
     }
     

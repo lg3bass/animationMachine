@@ -13,13 +13,11 @@
 
 //New abcModel(file,divisions,
 //--------------------------------------------------------------
-abcModel::abcModel(std::string file, float divisions, ofxAlembic::Reader r,int _id){
+abcModel::abcModel(int _id){
+    this_id = _id;
     
-   
-    
-    
-    
-    this_id = _id;    
+    /*
+        
     aReader = r;  //Question: do I need to dispose of this object?        
     string path = file;    
     
@@ -36,6 +34,14 @@ abcModel::abcModel(std::string file, float divisions, ofxAlembic::Reader r,int _
     //params
     //how many segments
     segments = divisions;
+    
+    */ 
+     
+    //DEFAULTS
+    
+    //params
+    //how many segments
+    segments = 0;
     //track speed
     clipSpeedMod = 0.07;
     //what midi channel/track
@@ -64,7 +70,27 @@ abcModel::abcModel(std::string file, float divisions, ofxAlembic::Reader r,int _
 
 }
 
+void abcModel::init(std::string file, float divisions, ofxAlembic::Reader r) {
 
+    //this_id = _id;
+    aReader = r;  //Question: do I need to dispose of this object?
+    string path = file;
+    
+    if(path == "empty"){
+        isActive = false;
+    } else {
+        isActive = true;
+        //open the file if active
+        aReader.open(path);
+    }
+    // show all drawable names
+	r.dumpNames();
+    
+    //params
+    //how many segments
+    segments = divisions;
+    
+}
 
 
 void abcModel::load() {
@@ -203,12 +229,7 @@ void abcModel::update(){
     
 }
 
-
-void abcModel::draw(){
-    
-    //tried to move to update but it was only rendering one mesh per track.
-    //vbo_mesh.draw();
-    
+void abcModel::customDraw() {
     
     for (int i = 0; i < aReader.size(); i++)
 	{
@@ -225,9 +246,28 @@ void abcModel::draw(){
 		}
 	}
     
-    
 }
 
+/*
+void abcModel::draw(){
+    
+    //tried to move to update but it was only rendering one mesh per track.
+    //vbo_mesh.draw();
+    
+    for (int i = 0; i < aReader.size(); i++)
+	{
+		//ofMesh mesh;
+        //mesh.setMode(OF_PRIMITIVE_TRIANGLES);
+ 
+		if (aReader.get(i, vbo_mesh))
+		{
+			//mesh.draw();
+            //vbo_mesh = mesh;
+            vbo_mesh.draw();
+		}
+	}
+}
+*/
 
 void abcModel::report() {
     // show all drawable names

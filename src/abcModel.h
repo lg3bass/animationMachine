@@ -16,17 +16,24 @@
 #include "aGui.h"
 
 
-class abcModel{
+class abcModel : public ofNode {
+ 
+    ofVboMesh vbo_mesh;    
+    ofxAlembic::Reader aReader;
     
 public:
 
     aGui * myGuiRef;// not used I think???
     
-    abcModel(std::string file, float divisions, ofxAlembic::Reader r, int _id);
+    abcModel(int _id);
+    
+    void init(std::string file, float divisions, ofxAlembic::Reader r);
+    
     void load();
     void calcTime(float t);
     void update();
-    void draw();
+    void customDraw();
+    //void draw();
     void report();
     void launch();// dont think this is needed anymore.
     bool holdAnimation();
@@ -63,9 +70,7 @@ public:
     bool stageHold;
     bool stageEnd;//are we finalizing the animation run
     
-    ofVboMesh vbo_mesh;
-        
-    ofxAlembic::Reader aReader;
+
 };
 
 
