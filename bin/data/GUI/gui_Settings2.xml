@@ -1,0 +1,150 @@
+<Widget>
+    <Kind>2</Kind>
+    <Name>Point Light Auto Move</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>AR</Name>
+    <Value>50.999996185</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>AG</Name>
+    <Value>44.625003815</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>AB</Name>
+    <Value>44.625003815</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAT SHINE 1</Name>
+    <Value>97.315071106</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MDR1</Name>
+    <Value>25.500005722</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MDG1</Name>
+    <Value>223.125000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MDB1</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MER1</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MEG1</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MEB1</Name>
+    <Value>114.750000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MSR1</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MSG1</Name>
+    <Value>172.125000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MSB1</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAT SHINE 2</Name>
+    <Value>66.285713196</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MDR2</Name>
+    <Value>70.124992371</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MDG2</Name>
+    <Value>216.750000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MDB2</Name>
+    <Value>140.250000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MER2</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MEG2</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MEB2</Name>
+    <Value>133.875000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MSR2</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MSG2</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>MSB2</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>cull</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>spot</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>point</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>dir</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>amb</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>ANIM</Name>
+    <Value>0.400510192</Value>
+</Widget>
