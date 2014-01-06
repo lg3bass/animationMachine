@@ -36,7 +36,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>0_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b1.abc</Value>
+    <Value>abc/1_ODDITY/oddity_c1.abc</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -476,7 +476,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>8_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b9.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -531,7 +531,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>9_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b10.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -586,7 +586,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>10_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b11.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -641,7 +641,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>11_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b12.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -696,7 +696,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>12_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b13.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -751,7 +751,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>13_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b14.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -806,7 +806,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>14_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b15.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -861,7 +861,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>15_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b16.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -916,7 +916,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>16_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b17.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -971,7 +971,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>17_TRK_READER</Name>
-    <Value>abc/1_ODDITY/oddity_b18.abc</Value>
+    <Value>empty</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
