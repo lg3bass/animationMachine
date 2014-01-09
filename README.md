@@ -54,6 +54,7 @@ Development Roadmap
 - [ ] .abc asset check so app doesn't crash when trying to load something that's not there. 
 - [ ] Fix - Random select in total tracks.  e.g. lots of empty tracks messes up random selection.
 - [ ] Adjust midi in input selector.  Put in a switch for 1. IAC or 2. Network Midi...etc.
+- [ ] Control scene select with OSC and midi messages.
 - [ ] Lights refinement. Set default positions.  Point light positioning controls.
 - [ ] .abc World-Space translation controls using ofNode().
 - [ ] VBOMesh expirments. Preload .abc content to <vbomesh> vectors to increase performance and do instancing.
