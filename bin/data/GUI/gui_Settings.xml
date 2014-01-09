@@ -1,7 +1,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>Radius</Name>
-    <Value>142.066314697</Value>
+    <Value>159.834182739</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -11,72 +11,72 @@
 <Widget>
     <Kind>4</Kind>
     <Name>SX_POS</Name>
-    <Value>-267.123291016</Value>
+    <Value>127.551025391</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SY_POS</Name>
-    <Value>-61.643829346</Value>
+    <Value>25.510192871</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SZ_POS</Name>
-    <Value>500.000000000</Value>
+    <Value>214.285705566</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SX_ORI</Name>
-    <Value>-4.931503296</Value>
+    <Value>0.918365479</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SY_ORI</Name>
-    <Value>2.465744019</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SZ_ORI</Name>
-    <Value>-9.863021851</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Cutoff</Name>
-    <Value>69.349311829</Value>
+    <Value>27.551021576</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Cons</Name>
-    <Value>3.000000000</Value>
+    <Value>23.510204315</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>SDR</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>SDG</Name>
-    <Value>19.124996185</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>SDB</Name>
     <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
-    <Name>SSR</Name>
+    <Name>SDG</Name>
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
+    <Name>SDB</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
+    <Name>SSR</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
     <Name>SSG</Name>
-    <Value>19.124996185</Value>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>SSB</Name>
-    <Value>191.250000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -86,17 +86,17 @@
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_XORI</Name>
-    <Value>22.191787720</Value>
+    <Value>18.367340088</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_YORI</Name>
-    <Value>141.780822754</Value>
+    <Value>98.265289307</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>DIR_ZORI</Name>
-    <Value>2.465744019</Value>
+    <Value>3.673461914</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -131,17 +131,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Point Source</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>PDR</Name>
-    <Value>191.250000000</Value>
+    <Value>165.750000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
     <Name>PDG</Name>
-    <Value>172.125000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
@@ -151,15 +151,15 @@
 <Widget>
     <Kind>5</Kind>
     <Name>PSR</Name>
-    <Value>159.375000000</Value>
-</Widget>
-<Widget>
-    <Kind>5</Kind>
-    <Name>PSG</Name>
     <Value>210.375000000</Value>
 </Widget>
 <Widget>
     <Kind>5</Kind>
+    <Name>PSG</Name>
+    <Value>6.374993801</Value>
+</Widget>
+<Widget>
+    <Kind>5</Kind>
     <Name>PSB</Name>
-    <Value>12.750002861</Value>
+    <Value>0.000000000</Value>
 </Widget>

@@ -36,17 +36,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>0_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/2_ODDITY/oddity_s3_g1.abc</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>0_TRK_SPEED</Name>
-    <Value>0.070000000</Value>
+    <Value>0.020000014</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>0_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -56,32 +56,32 @@
 <Widget>
     <Kind>2</Kind>
     <Name>0_random</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>0_seq</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>0_note_On</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>0_note_Off</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>0_TRK_SEGMENTS</Name>
-    <Value>1.000000000</Value>
+    <Value>8.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>0_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>80.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -91,17 +91,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>1_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/2_ODDITY/oddity_s3_g2.abc</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SPEED</Name>
-    <Value>0.070000000</Value>
+    <Value>0.029999999</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -111,32 +111,32 @@
 <Widget>
     <Kind>2</Kind>
     <Name>1_random</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>1_seq</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>1_note_On</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>1_note_Off</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SEGMENTS</Name>
-    <Value>1.000000000</Value>
+    <Value>6.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>60.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -146,17 +146,17 @@
 <Widget>
     <Kind>12</Kind>
     <Name>2_TRK_READER</Name>
-    <Value>empty</Value>
+    <Value>abc/2_ODDITY/oddity_s3_g3.abc</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SPEED</Name>
-    <Value>0.070000000</Value>
+    <Value>0.020000005</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_MIDI</Name>
-    <Value>2.000000000</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -166,32 +166,32 @@
 <Widget>
     <Kind>2</Kind>
     <Name>2_random</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>2_seq</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>2_note_On</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>2_note_Off</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SEGMENTS</Name>
-    <Value>1.000000000</Value>
+    <Value>11.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SEGLN</Name>
-    <Value>20.000000000</Value>
+    <Value>110.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>

@@ -34,6 +34,7 @@ public:
     
     //SCENES
     int currentScene;
+    void clearScene(int sceneIndex);
     void loadScene(int sceneIndex);
     void saveScene(int sceneIndex);
     
@@ -41,6 +42,7 @@ public:
     //TRACKS
     void createTracks(int num);
     void setParamsInABCloaders(int num);
+    void clearParamsInABCloaders(int num);
     vector<aTrack> tracks;
     int pickRandomLoader(int ch);
     

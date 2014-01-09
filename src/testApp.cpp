@@ -136,6 +136,27 @@ void testApp::loadScene(int sceneIndex){
     
 }
 
+void testApp::clearScene(int sceneIndex){
+
+    clearParamsInABCloaders(numOfABC);
+    
+    
+    
+    //string filename = "GUI/gui_loader_Settings_" + ofToString(sceneIndex) + ".xml";
+    
+    //load the settings
+    //gui_loader->loadSettings(filename);
+    
+    //gui_loader_Alloc = true;
+    
+    //Load Alembic Models. gather data from gui_loader and load the models.
+    //setupABCLoaders(numOfABC);
+    
+    //doneBuilding = true;
+    
+}
+
+
 void testApp::saveScene(int sceneIndex){
     
     gui_loader_Alloc = false;
@@ -268,9 +289,13 @@ void testApp::draw(){
                     myLights->material2.begin();
                 }
                 
-                //myLights->("material"+ofToString(i)).begin();
-                if(abcModels[tracks[t].myLdrs[i].x].isActive) {
-                    abcModels[tracks[t].myLdrs[i].x].draw();
+                if(!showLdr){
+                    //myLights->("material"+ofToString(i)).begin();
+                    if(abcModels[tracks[t].myLdrs[i].x].isActive) {
+                        
+                        abcModels[tracks[t].myLdrs[i].x].draw();
+                    
+                    }
                 }
                 //myLights->("material"+ofToString(i)).end();
                 
@@ -466,7 +491,6 @@ void testApp::createTracks(int num){
 }
 
 //--------------------------------------------------------------
-
 void testApp::setParamsInABCloaders(int num) {
     
     /*
@@ -487,9 +511,14 @@ void testApp::setParamsInABCloaders(int num) {
     // loop through the loaders and set the params.
     for(int i = 0; i < num; i++){
         
+        
+        ofxUISlider *trackSlider = (ofxUISlider *)gui_loader->getWidget(ofToString(i)+"_TRK_SPD");
+        trackSlider->setLabelVisible(false);
+        
         //track speed
         ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_SPEED");
         abcModels[i].clipSpeedMod = trackDialer->getValue();
+        
         
         //track midi
         ofxUINumberDialer *midiDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_MIDI");
@@ -525,6 +554,53 @@ void testApp::setParamsInABCloaders(int num) {
         //seg len
         ofxUINumberDialer *segLnDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_SEGLN");
         abcModels[i].segLength = segLnDialer->getValue();
+        
+        
+        abcModels[i].setClipMarkers(0);
+    }
+    
+}
+
+//--------------------------------------------------------------
+void testApp::clearParamsInABCloaders(int num) {
+    
+    
+    // loop through the loaders and clear the params.
+    for(int i = 0; i < num; i++){
+        
+        ofxUITextInput *uitrack = (ofxUITextInput *)gui_loader->getWidget(ofToString(i)+"_TRK_READER");
+        uitrack->setTextString("empty");
+        
+        //track speed
+        ofxUINumberDialer *trackDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_SPEED");
+        trackDialer->setValue(0.07);
+        
+        
+        //track midi
+        ofxUINumberDialer *midiDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_MIDI");
+        midiDialer->setValue(1);
+        
+        //track note
+        ofxUINumberDialer *noteDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_NOTE");
+        noteDialer->setValue(0);
+        
+        //track type
+        ofxUIRadio *butType = (ofxUIRadio *)gui_loader->getWidget(ofToString(i)+"_TRK_TYPE");
+        butType->activateToggle(ofToString(i)+"_random");
+        
+        
+        //track mode
+        ofxUIRadio *butMode = (ofxUIRadio *)gui_loader->getWidget(ofToString(i)+"_TRK_MODE");
+        butMode->activateToggle(ofToString(i)+"_note_Off");
+        
+        
+        //segments
+        ofxUINumberDialer *segDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_SEGMENTS");
+        segDialer->setValue(0);
+        
+        //seg len
+        ofxUINumberDialer *segLnDialer = (ofxUINumberDialer *)gui_loader->getWidget(ofToString(i)+"_TRK_SEGLN");
+        segLnDialer->setValue(0);
         
         
         abcModels[i].setClipMarkers(0);
@@ -692,7 +768,13 @@ void testApp::LoaderGuiEvent(ofxUIEventArgs &e)
         
         //if current row eq last selected row on file then
         
-        if(ofIsStringInString(name, "LOAD")){
+        if(ofIsStringInString(name, "CLEAR")){
+            ofxUILabelButton *clearBut = (ofxUILabelButton *)gui_loader->getWidget("CLEAR");
+            if(clearBut->getValue()){
+                cout << "Clear Scene: " << currentScene << endl;
+                clearScene(currentScene);
+            }
+        } else if (ofIsStringInString(name, "LOAD")){
             ofxUILabelButton *loadBut = (ofxUILabelButton *)gui_loader->getWidget("LOAD");
             if(loadBut->getValue()){
                 cout << "load Scene: " << currentScene << endl;
@@ -819,7 +901,7 @@ void testApp::LoaderGuiEvent(ofxUIEventArgs &e)
 
 void testApp::setGUI_loader(int num){
     float xInit = OFX_UI_GLOBAL_WIDGET_SPACING;
-    float w = 1000 - xInit * 2;
+    float w = 1100 - xInit * 2;
     float vertH = 40;
     float h = 8;
     
@@ -832,6 +914,8 @@ void testApp::setGUI_loader(int num){
     gui_loader->setFont("GUI/HelveticaNeueLTStd-Bd.otf");
     gui_loader->setFontSize(OFX_UI_FONT_SMALL, 6);
     
+    
+    gui_loader->addWidgetRight(new ofxUILabelButton(50,false,"CLEAR",OFX_UI_FONT_SMALL));
     gui_loader->addWidgetRight(new ofxUILabelButton(50,false,"LOAD",OFX_UI_FONT_SMALL));
     gui_loader->addWidgetRight(new ofxUILabelButton(50,false,"SAVE",OFX_UI_FONT_SMALL));
     gui_loader->addWidgetRight(new ofxUIToggleMatrix(18,18,1,6,"BANKS",OFX_UI_FONT_SMALL));
@@ -847,7 +931,10 @@ void testApp::setGUI_loader(int num){
         
         gui_loader->addWidgetDown(new ofxUIImageToggle(20,20,false,"GUI/play.png",ofToString(i)+"_TRK_PLAY"));
         //gui_loader->addWidgetRight(new ofxUILabelButton(50,false,"LOAD",OFX_UI_FONT_SMALL));
-        gui_loader->addWidgetRight(new ofxUITextInput(220, ofToString(i)+"_TRK_READER", "empty", OFX_UI_FONT_SMALL));
+        gui_loader->addWidgetRight(new ofxUITextInput(300, ofToString(i)+"_TRK_READER", "empty", OFX_UI_FONT_SMALL));
+        
+        gui_loader->addWidgetRight(new ofxUISlider(ofToString(i)+"_TRK_SPD", 0.01f, 0.12f, 0.05, 100, 18));
+        
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 0.2, 0.0, 2, ofToString(i)+"_TRK_SPEED", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(1, 10, 10, 0, ofToString(i)+"_TRK_MIDI", OFX_UI_FONT_SMALL));
         gui_loader->addWidgetRight(new ofxUINumberDialer(0, 88, 0.0, 0, ofToString(i)+"_TRK_NOTE", OFX_UI_FONT_SMALL));
@@ -862,6 +949,7 @@ void testApp::setGUI_loader(int num){
         //gui_loader->addWidgetRight(new ofxUIToggle("random",false,20,20));
         
     }
+    // set the labels over the top row
     gui_loader->addWidgetNorthOf(new ofxUISpacer(40,2,"speed_spacer"),"0_TRK_SPEED");
     gui_loader->addWidgetNorthOf(new ofxUILabel("SPEED",OFX_UI_FONT_SMALL),"speed_spacer");
     
