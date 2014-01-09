@@ -62,3 +62,4 @@ Development Roadmap
 - [ ] Defered Rendering (Ambient Occulsion, Blur, Depth, etc.)
 - [ ] FFT Audio input
 - [ ] Maya scripts/Gui to consruct geometry and export Alembic at the same time.
+- [ ] Turn this whole thing into a FFGL plugin for Resolume.
