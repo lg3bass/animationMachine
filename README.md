@@ -5,11 +5,11 @@ Open Frameworks project to play Alembic(.abc) files in sync with incoming Midi.
 
 *No .abc files are included in this project yet.  I'll package in some samples shortly.
 
-1. Command+G to view the Materials and Lights screen
+1. Command+G to view the Materials and Lights GUI
 
-2. Command+L to view the .abc Loader screen.
+2. Command+L to view the .abc Loader GUI. Drag and drop data/abc/.abc files into the text area. Click "load".
 
-3. Command+(1-6) to load different scenes.
+3. Command+(1-6) to load different scenes (the 6 square radio buttons at the top). 
 
 Addons
 ----------------
