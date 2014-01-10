@@ -28,7 +28,7 @@ void testApp::setup(){
 	//ofxMidiIn::listPorts(); // via static as well
 	
 	// open port by number (you may need to change this)
-	midiIn.openPort(0);
+	midiIn.openPort(1);
 	//midiIn.openPort("IAC Driver Bus 1");	// by name
 	//midiIn.openVirtualPort("ofxMidiIn Input");	// open a virtual port
 	
@@ -557,6 +557,8 @@ void testApp::setParamsInABCloaders(int num) {
         
         
         abcModels[i].setClipMarkers(0);
+       
+        
     }
     
 }
@@ -606,6 +608,16 @@ void testApp::clearParamsInABCloaders(int num) {
         abcModels[i].setClipMarkers(0);
     }
     
+}
+
+//--------------------------------------------------------------
+void testApp::resetAnimation(int num){
+    // loop through the loaders and move the play head back to the beginning.
+    for(int i = 0; i < num; i++){
+     
+        abcModels[i].currentSegment = -1;
+        
+    }
 }
 
 
@@ -999,6 +1011,9 @@ void testApp::keyPressed(int key){
         switch (key) {
             case ' ':
                 myGui->wModActive = true;
+                cout << "space out" << endl;
+                
+                resetAnimation(numOfABC);
                 break;
             case 'a':
                 myGui->showAxis = true;

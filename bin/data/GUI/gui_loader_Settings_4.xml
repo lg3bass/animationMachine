@@ -39,6 +39,11 @@
     <Value>abc/2_ODDITY/full_s3_g1.abc</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>0_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>0_TRK_SPEED</Name>
     <Value>0.039999999</Value>
@@ -94,6 +99,11 @@
     <Value>abc/2_ODDITY/full_s3_g2.abc</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>1_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SPEED</Name>
     <Value>0.040000007</Value>
@@ -101,7 +111,7 @@
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>2.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -131,12 +141,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SEGMENTS</Name>
-    <Value>5.000000000</Value>
+    <Value>11.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>1_TRK_SEGLN</Name>
-    <Value>50.000000000</Value>
+    <Value>110.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -149,14 +159,19 @@
     <Value>abc/2_ODDITY/full_s3_g3.abc</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>2_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SPEED</Name>
-    <Value>0.040000007</Value>
+    <Value>0.039999999</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_MIDI</Name>
-    <Value>1.000000000</Value>
+    <Value>3.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -186,12 +201,12 @@
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SEGMENTS</Name>
-    <Value>11.000000000</Value>
+    <Value>5.000000000</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
     <Name>2_TRK_SEGLN</Name>
-    <Value>110.000000000</Value>
+    <Value>50.000000000</Value>
 </Widget>
 <Widget>
     <Kind>20</Kind>
@@ -202,6 +217,11 @@
     <Kind>12</Kind>
     <Name>3_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>3_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -259,6 +279,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>4_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>4_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -312,6 +337,11 @@
     <Kind>12</Kind>
     <Name>5_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>5_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -369,6 +399,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>6_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>6_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -422,6 +457,11 @@
     <Kind>12</Kind>
     <Name>7_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>7_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -479,6 +519,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>8_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>8_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -532,6 +577,11 @@
     <Kind>12</Kind>
     <Name>9_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>9_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -589,6 +639,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>10_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>10_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -642,6 +697,11 @@
     <Kind>12</Kind>
     <Name>11_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>11_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -699,6 +759,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>12_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>12_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -752,6 +817,11 @@
     <Kind>12</Kind>
     <Name>13_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>13_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -809,6 +879,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>14_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>14_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -862,6 +937,11 @@
     <Kind>12</Kind>
     <Name>15_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>15_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -919,6 +999,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>16_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>16_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -972,6 +1057,11 @@
     <Kind>12</Kind>
     <Name>17_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>17_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1029,6 +1119,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>18_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>18_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -1082,6 +1177,11 @@
     <Kind>12</Kind>
     <Name>19_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>19_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1139,6 +1239,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>20_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>20_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -1192,6 +1297,11 @@
     <Kind>12</Kind>
     <Name>21_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>21_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1249,6 +1359,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>22_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>22_TRK_SPEED</Name>
     <Value>0.070000000</Value>
@@ -1302,6 +1417,11 @@
     <Kind>12</Kind>
     <Name>23_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>23_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1359,6 +1479,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>24_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>24_TRK_SPEED</Name>
     <Value>0.069999985</Value>
@@ -1412,6 +1537,11 @@
     <Kind>12</Kind>
     <Name>25_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>25_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>
@@ -1469,6 +1599,11 @@
     <Value>empty</Value>
 </Widget>
 <Widget>
+    <Kind>4</Kind>
+    <Name>26_TRK_SPD</Name>
+    <Value>0.049999997</Value>
+</Widget>
+<Widget>
     <Kind>8</Kind>
     <Name>26_TRK_SPEED</Name>
     <Value>0.069999993</Value>
@@ -1522,6 +1657,11 @@
     <Kind>12</Kind>
     <Name>27_TRK_READER</Name>
     <Value>empty</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>27_TRK_SPD</Name>
+    <Value>0.049999997</Value>
 </Widget>
 <Widget>
     <Kind>8</Kind>

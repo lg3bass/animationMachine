@@ -66,7 +66,12 @@ public:
     ofxUICanvas *gui_loader;//new loader gui
     void setGUI_loader(int num);
     void LoaderGuiEvent(ofxUIEventArgs &e);
+    void resetAnimation(int num);
+    
+    
     int selectedLoaderRow;
+    
+    
     //int currentPlayingIndex;
     
     //Lights
@@ -88,6 +93,7 @@ public:
     
     //ALEMBIC
     void setupABCLoaders(int num);
+    
     
     vector<ofxAlembic::Reader *> myABCs;
     vector<abcModel> abcModels;
