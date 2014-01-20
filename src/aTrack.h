@@ -24,7 +24,7 @@ class aTrack  {
         std::string behavior;
         bool playNote;
         bool isInit;
-        vector <ofVec2f> myLdrs;
+        vector <ofVec2f> myLdrs;//this is a vector holding 1. loader index and 2. midi note (if any).
         int segments;
     
         void getInfo();

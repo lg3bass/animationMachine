@@ -28,7 +28,7 @@ void testApp::setup(){
 	//ofxMidiIn::listPorts(); // via static as well
 	
 	// open port by number (you may need to change this)
-	midiIn.openPort(1);
+	midiIn.openPort(0);
 	//midiIn.openPort("IAC Driver Bus 1");	// by name
 	//midiIn.openVirtualPort("ofxMidiIn Input");	// open a virtual port
 	
@@ -718,18 +718,27 @@ void testApp::noteIn() {
             //loop through the loaders.
             for(int i=0; i<tracks[midiMessage.channel-1].myLdrs.size();i++) {
                 
-                //logic: there should only be on that is animating at a time in the track.
+                //logic: there should only be one that is animating at a time in the track. Is the loader Animating?
                 if(abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isAnimating) {
                     
-                    //only actually do this if the trackMode is 1
-                    if(abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].trackMode == 1) {
-                        
-                        abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isAnimating = false;
-                        abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isHolding = true;
-                        
-                        //cout << "Note OFF - match currentPlayingIndex:" << tracks[midiMessage.channel-1].myLdrs[i].x << endl;
-                        
-                    }//end if trackMode
+                    //if it is animating, match against which midi note is playing.
+                    if(tracks[midiMessage.channel-1].myLdrs[i].y == midiMessage.pitch){
+                     
+                        //only actually do this if the trackMode is 1.
+                        //reminder: trackMode = NoteOn or NoteOff enabled.
+                        //trackMode 0 = animate on noteOn only.
+                        //trackMode 1 = animate noteOn then finish animating on noteOff message.
+                        if(abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].trackMode == 1) {
+                            
+                            abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isAnimating = false;
+                            abcModels[tracks[midiMessage.channel-1].myLdrs[i].x].isHolding = true;
+                            
+                            //cout << "Note OFF - match currentPlayingIndex:" << tracks[midiMessage.channel-1].myLdrs[i].x << endl;
+                            
+                        }//end if trackMode
+                    }//end match against midi note.
+                    
+                    
                 }//end if animating
             }//end for
         }//end if midiChannel

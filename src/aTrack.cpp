@@ -11,6 +11,9 @@
 
 aTrack::aTrack(std::string _behavior, bool _playNote, int _myID){
     
+    //myLdr is a vector that contains. This is here for fast reference.
+    //1. x = index of the loader. (~28 total)
+    //2. y = midi note as assigned in the gui.
     
     myID = _myID;
     behavior = _behavior;
@@ -23,7 +26,8 @@ aTrack::aTrack(std::string _behavior, bool _playNote, int _myID){
 void aTrack::getInfo() {
     cout << "TRACK: " << myID+1 << ",type:" << behavior << ",note:" << playNote << "," << "[";
     for(int i=0; i<myLdrs.size();i++){
-        cout << "(" << myLdrs[i].x << "," << myLdrs[i].y << ")";        
+        //loop through all the loaders in the track and out put the 1. x=abcModel 2. y=midi note.
+        cout << "(" << myLdrs[i].x << "," << myLdrs[i].y << ")";
     }
     cout << "]" << endl;
 }

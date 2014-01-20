@@ -4,6 +4,7 @@
 *.sublime-workspace
 
 /bin/data/abc/1_ODDITY/
+/bin/data/abc/block/
 /bin/data/GUI/OLD/
 /bin/kapow_data/
 
