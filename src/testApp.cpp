@@ -23,24 +23,10 @@ void testApp::setup(){
     //turn this on to show lots of output data.
     //ofSetLogLevel(OF_LOG_VERBOSE);
     
-	// print input ports to console
-	midiIn.listPorts(); // via instance
-	//ofxMidiIn::listPorts(); // via static as well
-	
-	// open port by number (you may need to change this)
-	midiIn.openPort(0);
-	//midiIn.openPort("IAC Driver Bus 1");	// by name
-	//midiIn.openVirtualPort("ofxMidiIn Input");	// open a virtual port
-	
-	// don't ignore sysex, timing, & active sense messages,
-	// these are ignored by default
-	midiIn.ignoreTypes(false, false, false);
-	
-	// add testApp as a listener
-	midiIn.addListener(this);
-	
-	// print received messages to the console
-	midiIn.setVerbose(false);
+    //setup Midi and set input source to (0=IAC, 1=Network Midi)
+    setupMidi(0);
+    
+
     
     //SYPHON
     //much nicer than processing's vs.:)
@@ -89,6 +75,8 @@ void testApp::setup(){
     
     
 }
+
+
 
 void testApp::reset()
 {
@@ -180,7 +168,7 @@ void testApp::saveScene(int sceneIndex){
 void testApp::update(){
     
     
-    ofSetWindowTitle("fps: "+ofToString(ofGetFrameRate())+" - "+ofToString(ofGetWidth())+","+ofToString(ofGetHeight()));
+    ofSetWindowTitle("size:"+ofToString(ofGetWidth())+","+ofToString(ofGetHeight())+", port: "+ofToString(midiIn.getPort())+", fps: "+ofToString(ofGetFrameRate()));
     
     
     //KEEP
@@ -618,6 +606,50 @@ void testApp::resetAnimation(int num){
         abcModels[i].currentSegment = -1;
         
     }
+}
+
+//--------------------------------------------------------------
+void testApp::setupMidi(int input) {
+	// print input ports to console
+	midiIn.listPorts(); // via instance
+	//ofxMidiIn::listPorts(); // via static as well
+	
+	// open port by number (you may need to change this)
+	midiIn.openPort(input);
+	//midiIn.openPort("IAC Driver Bus 1");	// by name
+	//midiIn.openVirtualPort("ofxMidiIn Input");	// open a virtual port
+	
+	// don't ignore sysex, timing, & active sense messages,
+	// these are ignored by default
+	midiIn.ignoreTypes(false, false, false);
+	
+	// add testApp as a listener
+	midiIn.addListener(this);
+	
+	// print received messages to the console
+	midiIn.setVerbose(false);
+    
+}
+
+
+//--------------------------------------------------------------
+void testApp::toggleMidiPort() {
+    
+    //test if the existing port is open
+    if(midiIn.isOpen()){
+        //get the existing port
+        int port = midiIn.getPort();
+        
+        //close the existing port
+        midiIn.closePort();
+        
+        //open the new port
+        if (port == 0){
+            midiIn.openPort(1);
+        } else {
+            midiIn.openPort(0);
+        }
+     }
 }
 
 
@@ -1084,6 +1116,12 @@ void testApp::keyPressed(int key){
                    }
                  
                 }
+                break;
+            case 'm':
+                //midi port
+                
+                toggleMidiPort();
+              
                 break;
             case 't':
                 //gui screens

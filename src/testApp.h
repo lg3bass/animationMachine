@@ -30,7 +30,10 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     void reset();
-     
+    
+    //MIDI
+    void setupMidi(int input);
+    void toggleMidiPort();
     
     //SCENES
     int currentScene;
