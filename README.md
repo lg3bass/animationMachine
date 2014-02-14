@@ -1,5 +1,6 @@
 Animation Machine
 ==================
+Latest Update: 2014-02-14
 
 Open Frameworks project to play Alembic(.abc) files in sync with incoming Midi.  
 
@@ -11,6 +12,9 @@ Open Frameworks project to play Alembic(.abc) files in sync with incoming Midi.
 
 3. Command+(1-6) to load different scenes (the 6 square radio buttons at the top). 
 
+4. ',' or '.' Previous and Next saved camera position, 'n' new camera, 's' save camera.
+
+
 Addons
 ----------------
 
@@ -19,6 +23,8 @@ Addons
 * ofxXmlSettings
 * ofxUI
 * ofxMidi
+* ofxCameraMove (greatly modified)
+* ofxTweener (for ofxCameraMove)
 
 .abc files (data/abc/<myabcfile>.abc)
 -----------------
@@ -49,17 +55,20 @@ Triggering can be both Note-on or Note-off.  i.e. A 20 frame animation sequence 
 Development Roadmap
 -------------------
 
-- [ ] Make loader speed mod a ofxUISlider
+- [-] Make loader speed mod a ofxUISlider, (un-hooked up)
 - [ ] Create a Track GUI to tie Materials to midi channels so each can have a different material. 
 - [ ] .abc asset check so app doesn't crash when trying to load something that's not there. 
 - [ ] Fix - Random select in total tracks.  e.g. lots of empty tracks messes up random selection.
-- [ ] Adjust midi in input selector.  Put in a switch for 1. IAC or 2. Network Midi...etc.
+- [x] Adjust midi in input selector.  Put in a switch for 1. IAC or 2. Network Midi...etc.
 - [ ] Control scene select with OSC and midi messages.
 - [ ] Lights refinement. Set default positions.  Point light positioning controls.
-- [ ] .abc World-Space translation controls using ofNode().
+- [x] .abc World-Space translation controls using ofNode().
+- [ ] FFT Audio input
+
+Future Dev (suspended for now)
+------------------
 - [ ] VBOMesh expirments. Preload .abc content to <vbomesh> vectors to increase performance and do instancing.
 - [ ] Average normals script to calcute normals on meshes that have none.
 - [ ] Defered Rendering (Ambient Occulsion, Blur, Depth, etc.)
-- [ ] FFT Audio input
 - [ ] Maya scripts/Gui to consruct geometry and export Alembic at the same time.
 - [ ] Turn this whole thing into a FFGL plugin for Resolume.
