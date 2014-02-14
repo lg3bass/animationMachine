@@ -71,7 +71,11 @@ void testApp::setup(){
     //reset lights and lights gui.
     reset();
     
+    saveCam.setup(&cam,"xml"); // add you ofeasycam and the folder where the xmls are
+    //saveCam.enableSave(); // by defaul the listion is on you can actival with enableSave;
+    //saveCam.disableSave(); // or disable key save wtih this
     
+    saveCam.isSettingCam = false;//flag to display the press 'n' to save message.
     
     
 }
@@ -190,6 +194,8 @@ void testApp::update(){
         myLights->point.setPosition(cos(ofGetElapsedTimef()*.6f) * myGui->radius * 2 + center.x,sin(ofGetElapsedTimef()*.8f) * myGui->radius * 2 + center.y,-cos(ofGetElapsedTimef()*.8f) * myGui->radius * 2 + center.z);
     }
     
+    
+    saveCam.update();
     
 }
 
@@ -338,7 +344,7 @@ void testApp::draw(){
 	mainOutputSyphonServer.publishScreen();
     
 
-    
+    saveCam.information();
     
     
 }// end draw
@@ -1152,6 +1158,20 @@ void testApp::keyPressed(int key){
                 }
                 
                 break;
+            //saveCam
+            case ',':
+                saveCam.prevView(4.0);
+                break;
+            case '.':
+                saveCam.nextView(4.0);
+                break;
+            case 's':
+                saveCam.updateView(-1);//-1= current view
+                break;
+            case 'n':
+                saveCam.newView();
+                break;
+                
             default:
                 break;
         }
@@ -1195,7 +1215,7 @@ void testApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
-    
+    saveCam.isSettingCam = true;
 }
 
 //--------------------------------------------------------------

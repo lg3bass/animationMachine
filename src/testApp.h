@@ -4,6 +4,7 @@
 #include "ofxUI.h"
 #include "ofxSyphon.h"
 #include "ofxMidi.h"
+#include "ofxCameraMove.h"
 #include "abcModel.h"
 #include "aGui.h"
 #include "aLights.h"
@@ -54,6 +55,7 @@ public:
     
     //CAM
     ofEasyCam cam;
+    ofxCameraMove saveCam;
     
     //GUI
     aGui *myGui;
