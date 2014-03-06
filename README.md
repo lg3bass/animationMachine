@@ -1,6 +1,12 @@
 Animation Machine
 ==================
-Latest Update: 2014-02-14
+Latest Update: 2014-03-05
+* Added OSC support (not connected to CameraMove yet!)
+* Added Camera Move
+
+
+Description
+--------------
 
 Open Frameworks project to play Alembic(.abc) files in sync with incoming Midi.  
 
@@ -14,17 +20,40 @@ Open Frameworks project to play Alembic(.abc) files in sync with incoming Midi.
 
 4. ',' or '.' Previous and Next saved camera position, 'n' new camera, 's' save camera.
 
+Compiling
+=================
 
 Addons
 ----------------
-
-* ofxAlembic
+* ofxAlembic (use mine: https://github.com/lg3bass/ofxAlembic)
 * ofxSyphon
 * ofxXmlSettings
 * ofxUI
 * ofxMidi
-* ofxCameraMove (greatly modified)
+* ofxCameraMove (use mine: https://github.com/lg3bass/ofxCameraMove)
 * ofxTweener (for ofxCameraMove)
+* ofxOsc
+
+Header Search Paths
+--------------------
+* ../../../addons/ofxAlembic/libs/alembic/include
+* ../../../addons/ofxAlembic/libs/alembic/include/OpenEXR
+* ../../../addons/ofxMidi/src
+* ../../../addons/ofxMidi/libs/rtmidi
+* ../../../addons/ofxOsc/libs
+* ../../../addons/ofxOsc/libs/oscpack
+* ../../../addons/ofxOsc/libs/oscpack/src
+* ../../../addons/ofxOsc/libs/oscpack/src/ip
+../../../addons/ofxOsc/libs/oscpack/src/ip/posix
+../../../addons/ofxOsc/libs/oscpack/src/ip/win32
+../../../addons/ofxOsc/libs/oscpack/src/osc
+../../../addons/ofxOsc/src
+
+<TARGET> Build Phases > Copy files
+---------------------
+GLUT.framework
+Syphon.framework
+
 
 .abc files (data/abc/<myabcfile>.abc)
 -----------------
@@ -60,7 +89,8 @@ Development Roadmap
 - [ ] .abc asset check so app doesn't crash when trying to load something that's not there. 
 - [ ] Fix - Random select in total tracks.  e.g. lots of empty tracks messes up random selection.
 - [x] Adjust midi in input selector.  Put in a switch for 1. IAC or 2. Network Midi...etc.
-- [ ] Control scene select with OSC and midi messages.
+- [x] Added OSC.
+- [ ] Control camera with OSC.
 - [ ] Lights refinement. Set default positions.  Point light positioning controls.
 - [x] .abc World-Space translation controls using ofNode().
 - [ ] FFT Audio input
