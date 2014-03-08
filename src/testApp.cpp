@@ -178,54 +178,14 @@ void testApp::saveScene(int sceneIndex){
 void testApp::update(){
     
     
+    
     ofSetWindowTitle("size:"+ofToString(ofGetWidth())+","+ofToString(ofGetHeight())+", port: "+ofToString(midiIn.getPort())+", fps: "+ofToString(ofGetFrameRate()));
     
     
-    //OSC
-    // hide old messages
-	for(int i = 0; i < NUM_MSG_STRINGS; i++){
-		if(timers[i] < ofGetElapsedTimef()){
-			msg_strings[i] = "";
-		}
-	}
-
-    // check for waiting messages
-	while(receiver.hasWaitingMessages()){
-        // get the next message
-		ofxOscMessage m;
-		receiver.getNextMessage(&m);
-        
-        // unrecognized message: display on the bottom of the screen
-        string msg_string;
-        msg_string = m.getAddress();
-        msg_string += ": ";
-        for(int i = 0; i < m.getNumArgs(); i++){
-            // get the argument type
-            msg_string += m.getArgTypeName(i);
-            msg_string += ":";
-            // display the argument - make sure we get the right type
-            if(m.getArgType(i) == OFXOSC_TYPE_INT32){
-                msg_string += ofToString(m.getArgAsInt32(i));
-            }
-            else if(m.getArgType(i) == OFXOSC_TYPE_FLOAT){
-                msg_string += ofToString(m.getArgAsFloat(i));
-            }
-            else if(m.getArgType(i) == OFXOSC_TYPE_STRING){
-                msg_string += m.getArgAsString(i);
-            }
-            else{
-                msg_string += "unknown";
-            }
-        }
-        // add to the list of strings to display
-        msg_strings[current_msg_string] = msg_string;
-        timers[current_msg_string] = ofGetElapsedTimef() + 5.0f;
-        current_msg_string = (current_msg_string + 1) % NUM_MSG_STRINGS;
-        // clear the next line
-        msg_strings[current_msg_string] = "";
-        
-        
-    }
+    //Messaging(OSC,MIDI)
+    eraseMessages();
+    newOscMessage();
+    
     
     
     //KEEP
@@ -401,14 +361,15 @@ void testApp::draw(){
 
     saveCam.information();
     
-    //OSC TEST
+    //OSC
+    //This just draws the osc messages to the screen. Totally unnecessary.
     string buf;
-	buf = "listening for osc messages on port" + ofToString(PORT);
-	ofDrawBitmapString(buf, 10, 46);
+	buf = "osc port: " + ofToString(PORT);
+	ofDrawBitmapString(buf, 1100, 10);
     
-    for(int i = 0; i < NUM_MSG_STRINGS; i++){
-		ofDrawBitmapString(msg_strings[i], 10, 58 + 15 * i);
-	}
+    //Display Midi notes, OSC, etc.
+    drawMessages();
+
     
     
 }// end draw
@@ -678,6 +639,9 @@ void testApp::resetAnimation(int num){
     }
 }
 
+
+
+//MIDI CODE
 //--------------------------------------------------------------
 void testApp::setupMidi(int input) {
 	// print input ports to console
@@ -716,8 +680,10 @@ void testApp::toggleMidiPort() {
         //open the new port
         if (port == 0){
             midiIn.openPort(1);
+            addMessage(midiIn.getPortName(1));
         } else {
             midiIn.openPort(0);
+            addMessage(midiIn.getPortName(0));
         }
      }
 }
@@ -742,6 +708,13 @@ void testApp::noteIn() {
         int currentPlayingIndex = 0;
         
         //cout << ofxMidiMessage::getStatusString(midiMessage.status) << " -- value:" << midiMessage.value << " pitch: " << midiMessage.pitch << " delta: " << midiMessage.deltatime << " ch: " << midiMessage.channel << endl;
+        
+        string msg_string;
+        msg_string += "MIDI-IN: ";
+        msg_string += ofToString(midiMessage.pitch);
+        
+        addMessage(msg_string);
+        
         
         //make sure the track is not empty. Does the track have content.
         if(tracks[midiMessage.channel-1].myLdrs.size()>0){
@@ -848,6 +821,64 @@ void testApp::noteIn() {
     
     
 }
+
+//OSC
+//input OSC handler
+//-------------------------------------------------------------
+void testApp::newOscMessage(){
+
+
+    
+    // check for waiting messages
+	while(receiver.hasWaitingMessages()){
+        // get the next message
+		ofxOscMessage m;
+		receiver.getNextMessage(&m);
+        // check for mouse moved message
+		if(m.getAddress() == "/E0"){
+            
+            saveCam.nextView(4.0);
+            addMessage(">saveCam.nextView(4.0)");
+		}
+		// check for mouse button message
+		else if(m.getAddress() == "/E1"){
+            resetAnimation(numOfABC);
+            addMessage(">resetAnimation()");
+		}
+		else{
+        // unrecognized message: display on the bottom of the screen
+        string msg_string;
+        msg_string = m.getAddress();
+        msg_string += ": ";
+        for(int i = 0; i < m.getNumArgs(); i++){
+            // get the argument type
+            msg_string += m.getArgTypeName(i);
+            msg_string += ":";
+            // display the argument - make sure we get the right type
+            if(m.getArgType(i) == OFXOSC_TYPE_INT32){
+                msg_string += ofToString(m.getArgAsInt32(i));
+            }
+            else if(m.getArgType(i) == OFXOSC_TYPE_FLOAT){
+                msg_string += ofToString(m.getArgAsFloat(i));
+            }
+            else if(m.getArgType(i) == OFXOSC_TYPE_STRING){
+                msg_string += m.getArgAsString(i);
+            }
+            else{
+                msg_string += "unknown";
+            }
+        }
+        // add to the list of strings to display
+        addMessage(msg_string);
+            
+            
+            
+        
+        }//end else
+    }//end while
+
+}
+
 
 
 //-------------------------------------------------------------
@@ -1316,7 +1347,31 @@ void testApp::gotMessage(ofMessage msg){
 
 }
 
+//--------------------------------------------------------------
+void testApp::drawMessages() {
+    for(int i = 0; i < NUM_MSG_STRINGS; i++){
+		ofDrawBitmapString(msg_strings[i], 1100, 22 + 15 * i);
+	}
+}
 
+//--------------------------------------------------------------
+void testApp::eraseMessages() {
+    // hide old messages
+	for(int i = 0; i < NUM_MSG_STRINGS; i++){
+		if(timers[i] < ofGetElapsedTimef()){
+			msg_strings[i] = "";
+		}
+	}
+}
+
+//--------------------------------------------------------------
+void testApp::addMessage(string msg) {
+    msg_strings[current_msg_string] = msg;
+    timers[current_msg_string] = ofGetElapsedTimef() + 5.0f;
+    current_msg_string = (current_msg_string + 1) % NUM_MSG_STRINGS;
+    // clear the next line
+    msg_strings[current_msg_string] = "";
+}
 
 //--------------------------------------------------------------
 void testApp::dragEvent(ofDragInfo info){

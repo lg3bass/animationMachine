@@ -46,6 +46,7 @@ public:
     int current_msg_string;
     string msg_strings[NUM_MSG_STRINGS];
     float timers[NUM_MSG_STRINGS];
+    void newOscMessage();
     
     
     //SCENES
@@ -75,6 +76,11 @@ public:
     bool showTrack = false;
     bool showLights = false;
     bool showLdr = false;
+    
+    //MESSAGING
+    void drawMessages();
+    void eraseMessages();
+    void addMessage(string msg);
     
     //GUI LOADER
     ofPoint dragPt;//drag and drop
