@@ -835,15 +835,34 @@ void testApp::newOscMessage(){
 		ofxOscMessage m;
 		receiver.getNextMessage(&m);
         // check for mouse moved message
-		if(m.getAddress() == "/E0"){
-            
+		if(m.getAddress() == "/nextscene"){
             saveCam.nextView(4.0);
             addMessage(">saveCam.nextView(4.0)");
 		}
-		// check for mouse button message
-		else if(m.getAddress() == "/E1"){
+		// Reset animation.
+		else if(m.getAddress() == "/resetOF"){
             resetAnimation(numOfABC);
             addMessage(">resetAnimation()");
+		}
+		else if(m.getAddress() == "/scene1"){
+            loadScene(1);
+            addMessage(">loadScene(1);");
+		}
+		else if(m.getAddress() == "/scene2"){
+            loadScene(2);
+            addMessage(">loadScene(2);");
+		}
+		else if(m.getAddress() == "/scene3"){
+            loadScene(3);
+            addMessage(">loadScene(3);");
+		}
+		else if(m.getAddress() == "/scene4"){
+            loadScene(4);
+            addMessage(">loadScene(4);");
+		}
+		else if(m.getAddress() == "/scene5"){
+            loadScene(5);
+            addMessage(">loadScene(5);");
 		}
 		else{
         // unrecognized message: display on the bottom of the screen
