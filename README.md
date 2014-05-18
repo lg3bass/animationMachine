@@ -1,6 +1,10 @@
 Animation Machine
 ==================
-Latest Update: 2014-03-05
+Latest Update: 2014-05-17
+* Updated to ofApp
+* add code to raise the ofLogLevel. 
+
+Update: 2014-03-05
 * Added OSC support (not connected to CameraMove yet!)
 * Added Camera Move
 
@@ -25,7 +29,7 @@ Compiling
 
 Addons
 ----------------
-* ofxAlembic (use mine: https://github.com/lg3bass/ofxAlembic)
+* ofxAlembic (use mine: https://github.com/perfume-dev/ofxAlembic)
 * ofxSyphon
 * ofxXmlSettings
 * ofxUI
