@@ -1,4 +1,4 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 /*
  * Starter file for Alembic Media Player
@@ -15,13 +15,16 @@
 const int numOfABC = 28;
 
 //--------------------------------------------------------------
-void testApp::setup(){
-
+void ofApp::setup(){
+    
     
     doneBuilding = false;
     
     //turn this on to show lots of output data.
     //ofSetLogLevel(OF_LOG_VERBOSE);
+    
+    // to turn off the [ error ] ofxAlembic::IGeom: cast error.
+    ofSetLogLevel(OF_LOG_FATAL_ERROR);
     
     //setup Midi and set input source to (0=IAC, 1=Network Midi)
     setupMidi(0);
@@ -88,7 +91,7 @@ void testApp::setup(){
 
 
 
-void testApp::reset()
+void ofApp::reset()
 {
     myLights->reset();
     myGui->reset();
@@ -118,7 +121,7 @@ void testApp::reset()
     myTrackGui->gui->setVisible(false);
 }
 
-void testApp::loadScene(int sceneIndex){
+void ofApp::loadScene(int sceneIndex){
     
     string filename = "GUI/gui_loader_Settings_" + ofToString(sceneIndex) + ".xml";
     
@@ -134,7 +137,7 @@ void testApp::loadScene(int sceneIndex){
     
 }
 
-void testApp::clearScene(int sceneIndex){
+void ofApp::clearScene(int sceneIndex){
 
     clearParamsInABCloaders(numOfABC);
     
@@ -155,7 +158,7 @@ void testApp::clearScene(int sceneIndex){
 }
 
 
-void testApp::saveScene(int sceneIndex){
+void ofApp::saveScene(int sceneIndex){
     
     gui_loader_Alloc = false;
     doneBuilding = false;
@@ -175,7 +178,7 @@ void testApp::saveScene(int sceneIndex){
 }
 
 //--------------------------------------------------------------
-void testApp::update(){
+void ofApp::update(){
     
     
     
@@ -216,7 +219,7 @@ void testApp::update(){
 
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void ofApp::draw(){
 
     //register the cursor position.
     float dx = dragPt.x;
@@ -376,7 +379,7 @@ void testApp::draw(){
 
 
 //--------------------------------------------------------------
-void testApp::exit() {
+void ofApp::exit() {
     
 	myGui->exit();//save the gui XML
     myTrackGui->exit();
@@ -391,7 +394,7 @@ void testApp::exit() {
 
 
 //--------------------------------------------------------------
-void testApp::setupABCLoaders(int num) {
+void ofApp::setupABCLoaders(int num) {
     
     myABCs.clear();
     abcModels.clear();
@@ -447,7 +450,7 @@ void testApp::setupABCLoaders(int num) {
 }
 
 //--------------------------------------------------------------
-void testApp::createTracks(int num){
+void ofApp::createTracks(int num){
     //var num is not being used right now.
     
     
@@ -510,7 +513,7 @@ void testApp::createTracks(int num){
 }
 
 //--------------------------------------------------------------
-void testApp::setParamsInABCloaders(int num) {
+void ofApp::setParamsInABCloaders(int num) {
     
     /*
      //params to set
@@ -583,7 +586,7 @@ void testApp::setParamsInABCloaders(int num) {
 }
 
 //--------------------------------------------------------------
-void testApp::clearParamsInABCloaders(int num) {
+void ofApp::clearParamsInABCloaders(int num) {
     
     
     // loop through the loaders and clear the params.
@@ -630,7 +633,7 @@ void testApp::clearParamsInABCloaders(int num) {
 }
 
 //--------------------------------------------------------------
-void testApp::resetAnimation(int num){
+void ofApp::resetAnimation(int num){
     // loop through the loaders and move the play head back to the beginning.
     for(int i = 0; i < num; i++){
      
@@ -643,7 +646,7 @@ void testApp::resetAnimation(int num){
 
 //MIDI CODE
 //--------------------------------------------------------------
-void testApp::setupMidi(int input) {
+void ofApp::setupMidi(int input) {
 	// print input ports to console
 	midiIn.listPorts(); // via instance
 	//ofxMidiIn::listPorts(); // via static as well
@@ -657,7 +660,7 @@ void testApp::setupMidi(int input) {
 	// these are ignored by default
 	midiIn.ignoreTypes(false, false, false);
 	
-	// add testApp as a listener
+	// add ofApp as a listener
 	midiIn.addListener(this);
 	
 	// print received messages to the console
@@ -667,7 +670,7 @@ void testApp::setupMidi(int input) {
 
 
 //--------------------------------------------------------------
-void testApp::toggleMidiPort() {
+void ofApp::toggleMidiPort() {
     
     //test if the existing port is open
     if(midiIn.isOpen()){
@@ -690,7 +693,7 @@ void testApp::toggleMidiPort() {
 
 
 //--------------------------------------------------------------
-void testApp::newMidiMessage(ofxMidiMessage& msg) {
+void ofApp::newMidiMessage(ofxMidiMessage& msg) {
     
 	// make a copy of the latest message
 	midiMessage = msg;
@@ -700,7 +703,7 @@ void testApp::newMidiMessage(ofxMidiMessage& msg) {
 }
 
 //--------------------------------------------------------------
-void testApp::noteIn() {
+void ofApp::noteIn() {
     
     if (ofxMidiMessage::getStatusString(midiMessage.status) == "Note On") {
         
@@ -825,7 +828,7 @@ void testApp::noteIn() {
 //OSC
 //input OSC handler
 //-------------------------------------------------------------
-void testApp::newOscMessage(){
+void ofApp::newOscMessage(){
 
 
     
@@ -901,7 +904,7 @@ void testApp::newOscMessage(){
 
 
 //-------------------------------------------------------------
-int testApp::pickRandomLoader(int ch){
+int ofApp::pickRandomLoader(int ch){
     
     int selector = 0;
     //pick a random loader within the track.
@@ -925,7 +928,7 @@ int testApp::pickRandomLoader(int ch){
 
 
 //--------------------------------------------------------------
-void testApp::LoaderGuiEvent(ofxUIEventArgs &e)
+void ofApp::LoaderGuiEvent(ofxUIEventArgs &e)
 {
     
     string name = e.widget->getName();
@@ -1072,14 +1075,14 @@ void testApp::LoaderGuiEvent(ofxUIEventArgs &e)
     
 }
 
-void testApp::setGUI_loader(int num){
+void ofApp::setGUI_loader(int num){
     float xInit = OFX_UI_GLOBAL_WIDGET_SPACING;
     float w = 1100 - xInit * 2;
     float vertH = 40;
     float h = 8;
     
     if (gui_loader_Alloc) {
-        ofRemoveListener(gui_loader->newGUIEvent, this, &testApp::LoaderGuiEvent);
+        ofRemoveListener(gui_loader->newGUIEvent, this, &ofApp::LoaderGuiEvent);
         delete gui_loader;
     }
     
@@ -1147,13 +1150,13 @@ void testApp::setGUI_loader(int num){
     //gui_loader->setColorBack(ofColor(255,100));
     gui_loader->setWidgetColor(OFX_UI_WIDGET_COLOR_BACK, ofColor(120,200));
     
-    ofAddListener(gui_loader->newGUIEvent, this, &testApp::LoaderGuiEvent);
+    ofAddListener(gui_loader->newGUIEvent, this, &ofApp::LoaderGuiEvent);
     
 }
 
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key){
+void ofApp::keyPressed(int key){
     
 	if(key & OF_KEY_MODIFIER){
 		if(key >= OF_KEY_F1 && key <= OF_KEY_F12){
@@ -1294,7 +1297,7 @@ void testApp::keyPressed(int key){
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key){
+void ofApp::keyReleased(int key){
 	if(key & OF_KEY_MODIFIER){
 		if(key >= OF_KEY_F1 && key <= OF_KEY_F12){
         // if the f keys are pressed.
@@ -1323,17 +1326,17 @@ void testApp::keyReleased(int key){
 
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y ){
     
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
+void ofApp::mouseDragged(int x, int y, int button){
     saveCam.isSettingCam = true;
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button){
     
     if (myGui->gui->isHit(x, y)) {
         cam.disableMouseInput();
@@ -1352,29 +1355,29 @@ void testApp::mousePressed(int x, int y, int button){
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
+void ofApp::mouseReleased(int x, int y, int button){
     cam.enableMouseInput();
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
+void ofApp::windowResized(int w, int h){
     
 }
 
 //--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
+void ofApp::gotMessage(ofMessage msg){
 
 }
 
 //--------------------------------------------------------------
-void testApp::drawMessages() {
+void ofApp::drawMessages() {
     for(int i = 0; i < NUM_MSG_STRINGS; i++){
 		ofDrawBitmapString(msg_strings[i], 1100, 22 + 15 * i);
 	}
 }
 
 //--------------------------------------------------------------
-void testApp::eraseMessages() {
+void ofApp::eraseMessages() {
     // hide old messages
 	for(int i = 0; i < NUM_MSG_STRINGS; i++){
 		if(timers[i] < ofGetElapsedTimef()){
@@ -1384,7 +1387,7 @@ void testApp::eraseMessages() {
 }
 
 //--------------------------------------------------------------
-void testApp::addMessage(string msg) {
+void ofApp::addMessage(string msg) {
     msg_strings[current_msg_string] = msg;
     timers[current_msg_string] = ofGetElapsedTimef() + 5.0f;
     current_msg_string = (current_msg_string + 1) % NUM_MSG_STRINGS;
@@ -1393,7 +1396,7 @@ void testApp::addMessage(string msg) {
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo info){
+void ofApp::dragEvent(ofDragInfo info){
 	if( info.files.size() > 0 ){
 		
         string abcFile = "";

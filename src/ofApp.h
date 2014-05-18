@@ -18,7 +18,7 @@
 #define NUM_MSG_STRINGS 20
 
 
-class testApp : public ofBaseApp, public ofxMidiListener {
+class ofApp : public ofBaseApp, public ofxMidiListener {
     
 public:
     void setup();
